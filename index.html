@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Michele Martins Advocacia | OAB/MG 215.171</title>
+  <meta name="description" content="Michele Martins Advocacia em Uberlândia - MG. Atuação nas áreas Cível, Trabalhista e Previdenciária, com atendimento presencial e online mediante agendamento." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #e5e5e5;
+      --bg-2: #e3e3e3;
+      --gold: #c7a64c;
+      --gold-2: #e0c56b;
+      --text: #1b1b1b;
+      --muted: rgb(83, 70, 36);
+      --line:#c9c2b4 ;
+      --line-soft: rgba(255,255,255,.05);
+      --shadow: 0 20px 55px rgba(0,0,0,.28);
+      --shadow-soft: 0 3px 5px rgba(0,0,0,.18);
+      --max: 1200px;
+      --radius: 26px;
+      --glass: rgba(176, 176, 176, 0.52);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      line-height: 1.65;
+      background:
+        linear-gradient(rgba(240, 240, 240, 0.94), rgba(233, 233, 233, 0.95)),
+        radial-gradient(circle at top right, rgba(199,166,76,.08), transparent 24%),
+        radial-gradient(circle at left center, rgba(199,166,76,.05), transparent 28%),
+        var(--bg);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url('assets/logo-watermark.png');
+      background-size: 180px auto;
+      background-repeat: repeat;
+      opacity: 0.018;
+      pointer-events: none;
+      z-index: 0;
+      transform: rotate(-8deg) scale(1.08);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: url('assets/logo-watermark.png') center 180px / min(60vw, 680px) no-repeat;
+      opacity: .05;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section {
+      padding: 90px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      color: var(--gold-2);
+      font-size: .82rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: fadeUp .7s ease forwards;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      line-height: 1.08;
+      margin: 0;
+    }
+
+    .title {
+      font-size: clamp(2.2rem, 4.8vw, 4.15rem);
+      letter-spacing: -.03em;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp .85s ease forwards;
+      animation-delay: .08s;
+    }
+
+    .section-title {
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      margin-bottom: 14px;
+      letter-spacing: -.02em;
+    }
+
+    .section-desc {
+      max-width: 760px;
+      color: var(--muted);
+      margin: 0 0 38px;
+      opacity: .95;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: var(--glass);
+      backdrop-filter: blur(16px) saturate(140%);
+      -webkit-backdrop-filter: blur(16px) saturate(140%);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      box-shadow: 0 8px 24px rgba(0,0,0,.12);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo-header {
+      height: 100px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,.25));
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: .95rem;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      position: relative;
+      transition: .25s ease;
+    }
+
+    .nav-links a:not(.btn-whats)::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 0;
+      height: 1px;
+      background:#a88100;
+      transition: width .25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a:not(.btn-whats):hover::after {
+      width: 100%;
+    }
+
+    .btn,
+    .btn-outline,
+    .btn-whats {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      color: #111;
+      box-shadow: 0 14px 34px rgba(199,166,76,.18);
+    }
+
+    .btn:hover,
+    .btn-outline:hover,
+    .btn-whats:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      color: var(--text);
+    }
+
+    .btn-whats {
+      border: 1px solid rgba(199,166,76,.20);
+      color: var(--gold-2);
+      background: rgba(255,255,255,.03);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.02);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      color: var(--text);
+      font-size: 1.2rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero {
+      padding: 82px 0 60px;
+    }
+
+    .hero-grid {
+      display: grid;
+      /* grid-template-columns: 1.06fr .94fr; */
+      gap: 36px;
+      align-items: center;
+    }
+
+    
+    .hero-visual,
+    
+    .testimonial,
+    .contact-box,
+    .post,
+    .about-box,
+    .cta-box {
+      background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+      border: 1px solid var(--line-soft);
+     /*  border-radius: var(--radius);
+      box-shadow: var(--shadow); */
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-copy {
+      padding: 42px;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp .9s ease forwards;
+      animation-delay: .12s;
+    }
+    .hero-copy-2 {
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp .9s ease forwards;
+      animation-delay: .12s;
+    }
+    .inner-grid{
+      display: grid;
+      grid-template-columns: 1.06fr .94fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    #sobre{
+      box-shadow: 0 20px 55px rgba(0,0,0,.28);
+      background-color: var(--bg);
+    }
+
+    img{
+      width:100%;
+
+      overflow: hidden;
+    }
+
+    .hero-copy::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      bottom: -50px;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(199,166,76,.18), transparent 62%);
+      pointer-events: none;
+    }
+
+    .hero-copy p {
+      color: var(--muted);
+      font-size: 1.03rem;
+      margin: 0 0 30px;
+      max-width: 680px;
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp .85s ease forwards;
+      animation-delay: .18s;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 26px;
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp .85s ease forwards;
+      animation-delay: .28s;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp .85s ease forwards;
+      animation-delay: .38s;
+    }
+
+    .hero-tags span {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.06);
+      background: rgba(255,255,255,.02);
+      color: var(--muted);
+      font-size: .92rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-visual {
+      min-height: 560px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(199,166,76,.08), rgba(0,0,0,0)),
+        linear-gradient(135deg, #17171b, #0d0d10 60%, #17130c);
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp .9s ease forwards;
+      animation-delay: .22s;
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 1px solid rgba(199,166,76,.18);
+      border-radius: 22px;
+    }
+
+    .hero-watermark {
+      position: absolute;
+      inset: 0;
+      background: url('assets/logo-watermark.png') center center / 82% auto no-repeat;
+      opacity: .10;
+      filter: grayscale(.1);
+    }
+
+    .hero-photo-placeholder {
+      position: absolute;
+      inset: auto 34px 28px 34px;
+      padding: 30px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.46));
+      border: 1px solid rgba(255,255,255,.05);
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-photo-placeholder h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-photo-placeholder p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 460px;
+    }
+
+    .about-grid,
+    .cards,
+    .posts,
+    .testimonials,
+    .contact-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .about-grid {
+      grid-template-columns: 1.1fr .9fr;
+      align-items: stretch;
+    }
+
+    .about-box {
+      padding: 30px;
+    }
+
+    .about-box p {
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+
+    .list {
+      display: grid;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .list-item {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .list-item i {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(199,166,76,.12);
+      color: var(--gold-2);
+      border: 1px solid var(--line);
+      font-style: normal;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .list-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .list-item span {
+      color: var(--muted);
+      font-size: .96rem;
+    }
+
+    .cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      transition: transform .25s ease, border-color .25s ease;
+      border-radius: 10pxs;
+      
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(199,166,76,.34);
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      right: -34px;
+      bottom: -34px;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(199,166,76,.12), transparent 60%);
+      pointer-events: none;
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      border: 1px solid var(--line);
+      background: rgba(199,166,76,.12);
+      color: var(--gold-2);
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    .card p,
+    .post p,
+    .testimonial p,
+    .contact-box p,
+    .cta-box p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .card ul {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .card li {
+      color: var(--muted);
+      position: relative;
+      padding-left: 16px;
+      font-size: .95rem;
+    }
+
+    .card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--gold-2);
+    }
+
+    .content-band {
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.015));
+      border-top: 1px solid rgba(255,255,255,.04);
+      border-bottom: 1px solid rgba(255,255,255,.04);
+    }
+
+    .posts {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .post {
+      overflow: hidden;
+      transition: transform .25s ease, border-color .25s ease;
+    }
+
+    .post:hover {
+      transform: translateY(-4px);
+      border-color: rgba(199,166,76,.34);
+    }
+
+    .post-thumb {
+      height: 180px;
+      background:
+        linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.18)),
+        linear-gradient(135deg, #2c2722, #18181b 55%, #26211a);
+      border-bottom: 1px solid rgba(255,255,255,.05);
+      position: relative;
+    }
+
+    .post-thumb::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('assets/logo-watermark.png') center/240px no-repeat;
+      opacity: .07;
+    }
+
+    .post-body {
+      padding: 24px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold-2);
+      margin-bottom: 10px;
+    }
+
+    .post h3 {
+      font-size: 1.22rem;
+      margin-bottom: 10px;
+    }
+
+    .more {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      color: var(--gold-2);
+      font-weight: 600;
+    }
+
+    .testimonials {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .testimonial {
+      padding: 28px;
+      transition: transform .25s ease, border-color .25s ease;
+    }
+
+    .testimonial:hover {
+      transform: translateY(-4px);
+      border-color: rgba(199,166,76,.34);
+    }
+
+    .quote {
+      color: var(--gold-2);
+      font-size: 2.8rem;
+      line-height: 1;
+      margin-bottom: 8px;
+      display: block;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .testimonial footer {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255,255,255,.05);
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr .85fr;
+      align-items: stretch;
+    }
+
+    .contact-box {
+      padding: 30px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .contact-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .contact-item i {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      /* border-radius: 14px; */
+      /* background: rgba(199,166,76,.12); */
+      border: 1px solid var(--line);
+      color: var(--gold-2);
+      font-style: normal;
+      /* box-shadow: var(--shadow-soft); */
+    }
+
+    .contact-item strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .contact-item span,
+    .contact-item a {
+      color: var(--muted);
+      font-size: .97rem;
+    }
+
+    .cta-box {
+      padding: 30px;
+      background:
+        radial-gradient(circle at top right, rgba(199,166,76,.16), transparent 28%),
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+    }
+
+    .cta-box h3 {
+      font-size: 1.7rem;
+      margin-bottom: 10px;
+    }
+
+    footer.site-footer {
+      padding: 30px 0 44px;
+      border-top: 1px solid rgba(255,255,255,.05);
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      color: var(--muted);
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .footer-brand img {
+      height: 40px;
+      width: auto;
+      opacity: .92;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      color: #07150c;
+      display: grid;
+      place-items: center;
+      font-size: 1.45rem;
+      font-weight: 700;
+      box-shadow: 0 18px 35px rgba(37,211,102,.28);
+      z-index: 35;
+      transition: transform .2s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-2px) scale(1.03);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards,
+      .posts,
+      .testimonials {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 820px) {
+      .menu-toggle {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .nav {
+        min-height: 74px;
+        flex-wrap: wrap;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 8px 0 2px;
+      }
+
+      .nav-links.open { display: flex; }
+
+      .nav-links a {
+        padding: 12px 14px;
+        border-radius: 14px;
+        background: rgba(255,255,255,.02);
+        border: 1px solid rgba(255,255,255,.05);
+      }
+
+      .hero-copy,
+      .hero-photo-placeholder,
+      .about-box,
+      .card,
+      .testimonial,
+      .contact-box,
+      .cta-box,
+      .post-body {
+        padding: 24px;
+      }
+
+      .cards,
+      .posts,
+      .testimonials {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 420px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      body::before {
+        background-size: 120px auto;
+      }
+
+      body::after {
+        background-size: 92vw auto;
+        background-position: center 220px;
+      }
+
+      .logo-header {
+        height: 40px;
+      }
+
+      .title {
+        font-size: 2.35rem;
+      }
+
+      .hero-tags span {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#inicio" aria-label="Página inicial Michele Martins Advocacia">
+        <img src="assets/logo-header.png" alt="Michele Martins Advocacia" class="logo-header">
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio">Home</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#areas">Áreas de Atuação</a>
+        <!-- <a href="#conteudos">Conteúdos</a> -->
+        <a href="#contato">Contato</a>
+        <a href="https://wa.me/5534997823300?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="btn-whats">Falar no WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-grid">
+        <div class="hero-copy-2">
+          
+          <div class="inner-grid">
+            <div>
+              <img src="assets/img.webp" alt="100%">
+            </div>
+            <div>
+              <div class="eyebrow">Advocacia estratégica e humanizada</div>
+              <h1 class="title">Excelência e dedicação na advocacia para decisões mais seguras.</h1>
+              <p>
+                Michele Madalena Martins atua nas áreas Cívil, Trabalhista e Previdenciária, com condução técnica, atendimento personalizado e foco em soluções jurídicas seguras, transparentes e alinhadas à realidade de cada cliente.
+              </p>
+
+              <div class="hero-tags">
+                <span>Atendimento presencial e online</span>
+                <span>Uberlândia - MG</span>
+                <span>OAB/MG 215.171</span>
+              </div>
+              
+              
+              <div class="hero-actions">
+                <a href="https://wa.me/5534997823300?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="btn">Agendar consulta</a>
+                <a href="#sobre" class="btn-outline">Conheça o escritório</a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        
+      </div>
+    </section>
+
+    <section class="section reveal" id="sobre">
+      <div class="container">
+        <div class="eyebrow">Sobre nós</div>
+        <h2 class="section-title">Compromisso, ética e excelência em cada caso.</h2>
+        <p class="section-desc">
+          O escritório oferece atendimento jurídico humanizado, estratégico e eficiente, com foco em soluções personalizadas, análise minuciosa da demanda e atuação técnica consistente do início ao fim.
+        </p>
+
+        <div class="about-grid">
+          <div >
+            <p>
+              Michele Madalena Martins é advogada inscrita na OAB/MG sob nº 215.171, com atuação consolidada nas áreas Cível, Trabalhista e Previdenciária.
+            </p>
+            <p>
+              Sua prática é pautada na análise técnica minuciosa, planejamento estratégico e atendimento estruturado. Cada demanda é conduzida com responsabilidade, confidencialidade e rigor jurídico.
+            </p>
+            <p>
+              Ao longo de sua trajetória, desenvolveu experiência na condução de processos, elaboração de estratégias personalizadas e acompanhamento integral do cliente, desde a fase consultiva até a solução definitiva da demanda.
+            </p>
+          </div>
+
+          <div >
+            <div class="list">
+              <div class="list-item">
+                <i>✓</i>
+                <div>
+                  <strong>Atendimento humanizado</strong>
+                  <span>Você não é apenas um processo. Sua história importa e será tratada com atenção.</span>
+                </div>
+              </div>
+              <div class="list-item">
+                <i>✓</i>
+                <div>
+                  <strong>Estratégia personalizada</strong>
+                  <span>Cada caso recebe análise detalhada para definição da melhor condução jurídica.</span>
+                </div>
+              </div>
+              <div class="list-item">
+                <i>✓</i>
+                <div>
+                  <strong>Transparência e acompanhamento</strong>
+                  <span>Comunicação clara, previsibilidade e suporte em todas as etapas do processo.</span>
+                </div>
+              </div>
+              <div class="list-item">
+                <i>✓</i>
+                <div>
+                  <strong>Base jurídica atualizada</strong>
+                  <span>Atuação fundamentada em entendimento jurisprudencial e técnica processual sólida.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="areas">
+      <div class="container">
+        <div class="eyebrow">Áreas de atuação</div>
+        <h2 class="section-title">Soluções jurídicas completas para você.</h2>
+        <p class="section-desc">
+          O escritório oferece atuação qualificada em demandas patrimoniais, trabalhistas e previdenciárias, sempre com leitura individual do caso e foco em segurança jurídica.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <div class="icon">⚖</div>
+            <h3>Direito Civil</h3>
+            <p>Atuação estratégica na proteção de interesses patrimoniais e familiares.</p>
+            <ul>
+              <li>Responsabilidade civil e indenizações</li>
+              <li>Contratos e revisão contratual</li>
+              <li>Inventários e partilhas</li>
+              <li>Conflitos patrimoniais</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="icon">✦</div>
+            <h3>Direito Trabalhista</h3>
+            <p>Representação técnica em demandas oriundas da relação de trabalho.</p>
+            <ul>
+              <li>Reclamações trabalhistas</li>
+              <li>Rescisão indireta</li>
+              <li>Verbas rescisórias</li>
+              <li>Horas extras e direitos suprimidos</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="icon">⌘</div>
+            <h3>Direito Previdenciário</h3>
+            <p>Planejamento e condução de benefícios previdenciários com análise técnica aprofundada.</p>
+            <ul>
+              <li>Aposentadorias</li>
+              <li>Pensão por morte</li>
+              <li>Auxílio-doença</li>
+              <li>Revisão de benefícios</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="section content-band reveal" id="conteudos">
+      <div class="container">
+        <div class="eyebrow">Conteúdos</div>
+        <h2 class="section-title">Informação jurídica com credibilidade.</h2>
+        <p class="section-desc">
+          Publicações técnicas e orientativas voltadas à compreensão clara dos direitos nas áreas Cível, Trabalhista e Previdenciária.
+        </p>
+
+        <div class="posts">
+          <article class="post">
+            <div class="post-thumb"></div>
+            <div class="post-body">
+              <span class="tag">Direito Civil</span>
+              <h3>Quando revisar contratos pode evitar prejuízos futuros</h3>
+              <p>Entenda como a análise preventiva de cláusulas fortalece a segurança das relações jurídicas.</p>
+              <a href="#contato" class="more">Saiba mais →</a>
+            </div>
+          </article>
+
+          <article class="post">
+            <div class="post-thumb"></div>
+            <div class="post-body">
+              <span class="tag">Direito Trabalhista</span>
+              <h3>Direitos suprimidos: quais sinais merecem atenção</h3>
+              <p>Horas extras, verbas rescisórias e alterações contratuais podem exigir análise jurídica cuidadosa.</p>
+              <a href="#contato" class="more">Saiba mais →</a>
+            </div>
+          </article>
+
+          <article class="post">
+            <div class="post-thumb"></div>
+            <div class="post-body">
+              <span class="tag">Previdenciário</span>
+              <h3>Planejamento previdenciário: por que antecipar é importante</h3>
+              <p>Uma leitura correta do histórico contributivo pode melhorar a estratégia para requerimento de benefícios.</p>
+              <a href="#contato" class="more">Saiba mais →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section> -->
+
+    <section class="section reveal" id="depoimentos">
+      <div class="container">
+        <div class="eyebrow">Depoimentos</div>
+        <h2 class="section-title">Quem confia, recomenda.</h2>
+        <p class="section-desc">
+          Atendimento com clareza, técnica e dedicação para que o cliente se sinta seguro e bem acompanhado durante toda a demanda.
+        </p>
+
+        <div class="testimonials">
+          <article class="testimonial">
+            <span class="quote">“</span>
+            <p>Profissional extremamente técnica e segura em suas orientações. Conduziu o caso com organização, clareza e muita responsabilidade.</p>
+            <footer>Cliente</footer>
+          </article>
+
+          <article class="testimonial">
+            <span class="quote">“</span>
+            <p>Transparência e estratégia em cada etapa do processo. Atendimento sério, humano e muito comprometido.</p>
+            <footer>Cliente</footer>
+          </article>
+
+          <article class="testimonial">
+            <span class="quote">“</span>
+            <p>Recebi orientações firmes e objetivas desde o início. O acompanhamento trouxe segurança para tomar as melhores decisões.</p>
+            <footer>Cliente</footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="contato">
+      <div class="container">
+        <div class="eyebrow">Contato</div>
+        <h2 class="section-title">Vamos conversar sobre o seu caso?</h2>
+        <p class="section-desc">
+          Atendimento mediante agendamento prévio, com possibilidade de atendimento presencial em Uberlândia - MG ou online.
+        </p>
+
+        <div class="contact-grid">
+          <div class="contact-box">
+            <h3>Fale com o escritório</h3>
+            <p>Entre em contato pelos canais abaixo para receber orientação inicial e agendar sua consulta.</p>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 30 30"><g id="Camada_2" data-name="Camada 2"><g id="ELEMENTS"><path d="M9.7,0A9.71,9.71,0,0,0,0,9.7c0,3.57,3.91,8.92,7.19,12.79a3.3,3.3,0,0,0,5,0c3.28-3.87,7.18-9.23,7.18-12.79A9.71,9.71,0,0,0,9.7,0Zm.5,20.78a.62.62,0,0,1-.5.23.61.61,0,0,1-.5-.23c-4.11-4.84-6.57-9-6.57-11.08a7.07,7.07,0,1,1,14.13,0C16.76,11.79,14.31,15.94,10.2,20.78Z"/><circle cx="9.7" cy="9.3" r="2"/></g></g></svg>
+                <div>
+                  <strong>Localização</strong>
+                  <span>Uberlândia - MG</span>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 30 30"><defs><style>.cls-1{fill-rule:evenodd;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="ELEMENTS"><path d="M0,19.44l1.39-5.2A9.67,9.67,0,1,1,5.23,18Zm5.49-3.35.33.2a7.81,7.81,0,1,0-2.68-2.65l.21.33-.78,2.91Z"/><path class="cls-1" d="M13.36,10.94A1.59,1.59,0,0,0,12,10.63c-.36.14-.59.7-.82,1a.34.34,0,0,1-.44.1A6.25,6.25,0,0,1,7.62,9.05a.39.39,0,0,1,0-.52,2.11,2.11,0,0,0,.56-.91A2,2,0,0,0,8,6.53a2.66,2.66,0,0,0-.8-1.21A1.09,1.09,0,0,0,6,5.5a2.42,2.42,0,0,0-.84,1.92A3.17,3.17,0,0,0,5.22,8a5.16,5.16,0,0,0,.59,1.34c.19.32.39.63.61.93a9.35,9.35,0,0,0,2.64,2.45,7.78,7.78,0,0,0,1.65.78,3.62,3.62,0,0,0,1.92.31,2.32,2.32,0,0,0,1.74-1.3,1.15,1.15,0,0,0,.08-.66C14.35,11.43,13.73,11.16,13.36,10.94Z"/></g></g></svg>
+              
+                <div>
+                  <strong>WhatsApp</strong>
+                  <a href="https://wa.me/5534997823300?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer">(34) 99782-3300</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 30 30"><g id="Camada_2" data-name="Camada 2"><g id="ELEMENTS"><path d="M19.2,1.38a.61.61,0,0,1-.07.1L12.51,9A3.76,3.76,0,0,1,6.89,9L.18,1.39a2.41,2.41,0,0,0-.18.9V10.9a4,4,0,0,0,4,4H15.37a4,4,0,0,0,4-4V2.29A2.12,2.12,0,0,0,19.2,1.38Z"/><path d="M8.39,7.66a1.73,1.73,0,0,0,1.3.59A1.69,1.69,0,0,0,11,7.66L17.61.15l.08-.07A2.33,2.33,0,0,0,17.1,0H2.28a2.12,2.12,0,0,0-.57.08Z"/></g></g></svg>
+                <div>
+                  <strong>E-mail</strong>
+                  <a href="mailto:contato@michelemartinsadvocacia.com.br">contato@michelemartinsadvocacia.com.br</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 30 30"><defs><style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="ELEMENTS"><circle class="cls-1" cx="10.65" cy="10.65" r="9.65"/><path d="M17.81,7.84,11.57,9.78a1.35,1.35,0,0,1,.28.5,1.41,1.41,0,0,1,.05.57l6.24-1.94a.5.5,0,0,0,.23-.65A.51.51,0,0,0,17.81,7.84Z"/><path d="M11.34,10V5.75c0-.16-.31-.44-.69-.44s-.7.28-.7.44V10a1,1,0,1,0,1.38,0Z"/></g></g></svg>
+                <div>
+                  <strong>Atendimento</strong>
+                  <span>Presencial e online, mediante agendamento.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-box">
+            <div>
+              <h3>Precisa de orientação jurídica segura?</h3>
+              <p>Clique no botão abaixo e fale diretamente com o escritório para uma análise inicial da sua demanda.</p>
+            </div>
+            <a href="https://wa.me/5534997823300?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="btn">Falar no WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div class="footer-brand">
+        <img src="assets/logo-header.png" alt="Michele Martins Advocacia">
+        <span>Michele Martins Advocacia • OAB/MG 215.171</span>
+      </div>
+      <div>Uberlândia - MG • © 2026 Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5534997823300?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">✆</a>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('open'));
+      });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
