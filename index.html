@@ -16,7 +16,7 @@
       --gold: #c7a64c;
       --gold-2: #e0c56b;
       --text: #efefef;
-      --muted: rgb(83, 70, 36);
+      --muted: rgb(194, 159, 70);
       --line:#c9c2b4 ;
       --line-soft: rgba(255,255,255,.05);
       --shadow: 0 20px 55px rgba(0,0,0,.28);
@@ -94,7 +94,7 @@
     }
 
     h1, h2, h3, h4 {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Playfair Display', sans-serif;
       font-weight: 600;
       line-height: 1.08;
       margin: 0;
@@ -154,7 +154,7 @@
       align-items: center;
       gap: 28px;
       font-size: .95rem;
-      color: var(--muted);
+      color: white;
     }
 
     .nav-links a {
@@ -189,12 +189,13 @@
       justify-content: center;
       gap: 10px;
       padding: 14px 22px;
-      border-radius: 999px;
+      border-radius: 8px 8px 8px 0px;
       font-weight: 600;
       transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
     }
 
     .btn {
+      margin-top: 10px;
       background: linear-gradient(135deg, var(--gold), var(--gold-2));
       color: #111;
       box-shadow: 0 14px 34px rgba(199,166,76,.18);
@@ -223,12 +224,12 @@
       display: none;
       width: 46px;
       height: 46px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.02);
-      color: var(--text);
+      /* border-radius: 14px; */
+      /* border: 1px solid var(--line); */
+      background-color: rgba(255,255,255,.00);
+      color: var(--gold-2);
       font-size: 1.2rem;
-      backdrop-filter: blur(8px);
+      border: none;
     }
 
     .hero {
@@ -333,6 +334,7 @@
       transform: translateY(18px);
       animation: fadeUp .85s ease forwards;
       animation-delay: .38s;
+      padding-bottom:20px ;
     }
 
     .hero-tags span {
@@ -340,7 +342,7 @@
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,.06);
       background: rgba(255,255,255,.02);
-      color: var(--muted);
+      color: linear-gradient(135deg, var(--gold), var(--gold-2));
       font-size: .92rem;
       box-shadow: var(--shadow-soft);
     }
@@ -489,12 +491,12 @@
       height: 48px;
       display: grid;
       place-items: center;
-      border-radius: 15px;
-      border: 1px solid var(--line);
-      background: rgba(199,166,76,.12);
+      /* border-radius: 15px; */
+      /* border: 1px solid var(--line); */
+      /* background: rgba(199,166,76,.12); */
       color: var(--gold-2);
       margin-bottom: 16px;
-      font-size: 1.05rem;
+      font-size: 2.05rem;
       box-shadow: var(--shadow-soft);
     }
 
@@ -1097,7 +1099,7 @@
 
             <div class="contact-list">
               <div class="contact-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 30 30"><g id="Camada_2" data-name="Camada 2"><g id="ELEMENTS"><path d="M9.7,0A9.71,9.71,0,0,0,0,9.7c0,3.57,3.91,8.92,7.19,12.79a3.3,3.3,0,0,0,5,0c3.28-3.87,7.18-9.23,7.18-12.79A9.71,9.71,0,0,0,9.7,0Zm.5,20.78a.62.62,0,0,1-.5.23.61.61,0,0,1-.5-.23c-4.11-4.84-6.57-9-6.57-11.08a7.07,7.07,0,1,1,14.13,0C16.76,11.79,14.31,15.94,10.2,20.78Z"/><circle cx="9.7" cy="9.3" r="2"/></g></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 30 30"><defs><style>.cls-1{fill:#fff;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><g id="Camada_2-2" data-name="Camada 2"><g id="ELEMENTS"><path class="cls-1" d="M9.7,0A9.72,9.72,0,0,0,0,9.7c0,3.57,3.91,8.92,7.19,12.79a3.3,3.3,0,0,0,4.65.35,3.85,3.85,0,0,0,.35-.35c3.28-3.87,7.18-9.23,7.18-12.79A9.72,9.72,0,0,0,9.7,0Zm.5,20.78a.66.66,0,0,1-1,0c-4.11-4.84-6.57-9-6.57-11.08a7.07,7.07,0,0,1,14.13-.53,4.69,4.69,0,0,1,0,.53C16.76,11.79,14.31,15.94,10.2,20.78Z"/><circle class="cls-1" cx="9.7" cy="9.3" r="2"/></g></g></g></g></svg>
                 <div>
                   <strong>Localização</strong>
                   <span>Uberlândia - MG</span>
@@ -1105,8 +1107,7 @@
               </div>
 
               <div class="contact-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 30 30"><defs><style>.cls-1{fill-rule:evenodd;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="ELEMENTS"><path d="M0,19.44l1.39-5.2A9.67,9.67,0,1,1,5.23,18Zm5.49-3.35.33.2a7.81,7.81,0,1,0-2.68-2.65l.21.33-.78,2.91Z"/><path class="cls-1" d="M13.36,10.94A1.59,1.59,0,0,0,12,10.63c-.36.14-.59.7-.82,1a.34.34,0,0,1-.44.1A6.25,6.25,0,0,1,7.62,9.05a.39.39,0,0,1,0-.52,2.11,2.11,0,0,0,.56-.91A2,2,0,0,0,8,6.53a2.66,2.66,0,0,0-.8-1.21A1.09,1.09,0,0,0,6,5.5a2.42,2.42,0,0,0-.84,1.92A3.17,3.17,0,0,0,5.22,8a5.16,5.16,0,0,0,.59,1.34c.19.32.39.63.61.93a9.35,9.35,0,0,0,2.64,2.45,7.78,7.78,0,0,0,1.65.78,3.62,3.62,0,0,0,1.92.31,2.32,2.32,0,0,0,1.74-1.3,1.15,1.15,0,0,0,.08-.66C14.35,11.43,13.73,11.16,13.36,10.94Z"/></g></g></svg>
-              
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 30 30"><defs><style>.cls-1,.cls-2{fill:#fff;}.cls-2{fill-rule:evenodd;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><g id="Camada_2-2" data-name="Camada 2"><g id="ELEMENTS"><path class="cls-1" d="M0,19.63l1.39-5.2a9.67,9.67,0,1,1,3.84,3.76Zm5.49-3.35.33.2a7.81,7.81,0,1,0-2.68-2.65l.21.33-.78,2.91Z"/><path class="cls-2" d="M13.36,11.13A1.58,1.58,0,0,0,12,10.82c-.36.14-.59.7-.82,1a.34.34,0,0,1-.44.1A6.29,6.29,0,0,1,7.62,9.24a.4.4,0,0,1,0-.52,2.15,2.15,0,0,0,.56-.91A2,2,0,0,0,8,6.72a2.68,2.68,0,0,0-.8-1.21A1.08,1.08,0,0,0,6,5.69a2.39,2.39,0,0,0-.84,1.92,2.86,2.86,0,0,0,.06.58,5.16,5.16,0,0,0,.59,1.34c.19.32.39.63.61.93a9.35,9.35,0,0,0,2.64,2.45,8.3,8.3,0,0,0,1.65.78,3.62,3.62,0,0,0,1.92.31,2.34,2.34,0,0,0,1.74-1.3,1.16,1.16,0,0,0,.08-.66C14.35,11.62,13.73,11.35,13.36,11.13Z"/></g></g></g></g></svg>
                 <div>
                   <strong>WhatsApp</strong>
                   <a href="https://wa.me/5534997823300?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer">(34) 99782-3300</a>
@@ -1114,7 +1115,7 @@
               </div>
 
               <div class="contact-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 30 30"><g id="Camada_2" data-name="Camada 2"><g id="ELEMENTS"><path d="M19.2,1.38a.61.61,0,0,1-.07.1L12.51,9A3.76,3.76,0,0,1,6.89,9L.18,1.39a2.41,2.41,0,0,0-.18.9V10.9a4,4,0,0,0,4,4H15.37a4,4,0,0,0,4-4V2.29A2.12,2.12,0,0,0,19.2,1.38Z"/><path d="M8.39,7.66a1.73,1.73,0,0,0,1.3.59A1.69,1.69,0,0,0,11,7.66L17.61.15l.08-.07A2.33,2.33,0,0,0,17.1,0H2.28a2.12,2.12,0,0,0-.57.08Z"/></g></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 30 30"><defs><style>.cls-1{fill:#fff;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><g id="Camada_2-2" data-name="Camada 2"><g id="ELEMENTS"><path class="cls-1" d="M19.2,1.38a.36.36,0,0,1-.07.1L12.51,9a3.76,3.76,0,0,1-5.31.31c-.11-.1-.21-.2-.31-.31L.18,1.39a2.33,2.33,0,0,0-.18.9V10.9a4,4,0,0,0,4,4H15.37a4,4,0,0,0,4-4V2.29A2.2,2.2,0,0,0,19.2,1.38Z"/><path class="cls-1" d="M8.39,7.66a1.74,1.74,0,0,0,1.3.59A1.7,1.7,0,0,0,11,7.66L17.61.15l.08-.07A2.33,2.33,0,0,0,17.1,0H2.28a2.24,2.24,0,0,0-.57.08Z"/></g></g></g></g></svg>
                 <div>
                   <strong>E-mail</strong>
                   <a href="mailto:contato@michelemartinsadvocacia.com.br">contato@michelemartinsadvocacia.com.br</a>
@@ -1122,7 +1123,7 @@
               </div>
 
               <div class="contact-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 30 30"><defs><style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="ELEMENTS"><circle class="cls-1" cx="10.65" cy="10.65" r="9.65"/><path d="M17.81,7.84,11.57,9.78a1.35,1.35,0,0,1,.28.5,1.41,1.41,0,0,1,.05.57l6.24-1.94a.5.5,0,0,0,.23-.65A.51.51,0,0,0,17.81,7.84Z"/><path d="M11.34,10V5.75c0-.16-.31-.44-.69-.44s-.7.28-.7.44V10a1,1,0,1,0,1.38,0Z"/></g></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 30 30"><defs><style>.cls-1{fill:#fff;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><g id="Camada_2-2" data-name="Camada 2"><g id="ELEMENTS"><path class="cls-1" d="M10.65,21.3A10.65,10.65,0,1,1,21.3,10.65,10.67,10.67,0,0,1,10.65,21.3Zm0-19.3a8.65,8.65,0,1,0,8.65,8.65A8.66,8.66,0,0,0,10.65,2Z"/><path class="cls-1" d="M17.81,7.84,11.57,9.78a1.36,1.36,0,0,1,.33,1.07l6.24-1.94a.5.5,0,0,0,.23-.65A.51.51,0,0,0,17.81,7.84Z"/><path class="cls-1" d="M11.34,10V5.75c0-.16-.31-.44-.69-.44s-.7.28-.7.44V10a1,1,0,0,0,1.38,1.45,1,1,0,0,0,0-1.42l0,0Z"/></g></g></g></g></svg>
                 <div>
                   <strong>Atendimento</strong>
                   <span>Presencial e online, mediante agendamento.</span>
